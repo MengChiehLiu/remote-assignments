@@ -10,12 +10,7 @@ app.get('/data', (req, res) => {
   if ('number' in req.query){
 
     if (n = parseInt(req.query['number'])){
-      let s = '';
-      for (let i=1; i<n; i++){
-        s += String(i) + '+';
-      }
-      s += String(n);
-      res.send(s);
+      res.send((1 + n) * n / 2);
     }else{
       res.send('Wrong Parameter');
     }
